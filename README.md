@@ -1,4 +1,4 @@
 # Capstone_1
 
-Name: Alvie Ahmed
-Sales Territory: Maryland
+- Name: Alvie Ahmed
+- Sales Territory: Maryland
