@@ -3,17 +3,6 @@ use sample_sales;
 --  Assigned Sales Territory: Maryland
 --  Assigned Region: Northeast
 
-SELECT * FROM inventory_categories;
-SELECT * FROM inventory_subcategories;
-SELECT * FROM management;
-SELECT * FROM online_sales;
-SELECT * FROM products;
-SELECT * FROM shipper_list;
-SELECT * FROM store_locations; 
-SELECT * FROM store_sales;
-
-SELECT Region FROM management;
-
 -- 1. What is total revenue overall for sales in the assigned territory, plus the start date and end date
 --    that tell you what period the data covers?
 
@@ -30,7 +19,7 @@ WHERE ss.Store_ID IN (
 
 SELECT 	YEAR(ss.Transaction_Date) AS Year, 
 		MONTH(ss.Transaction_Date) AS Month,
-        SUM(ss.Sale_Amount) AS TotalSales
+        FORMAT(SUM(ss.Sale_Amount), 2) AS TotalSales
 FROM store_sales ss
 WHERE ss.Store_ID IN (
 	SELECT sl.StoreID
